@@ -3,7 +3,7 @@ package com.github.kotlin.everywhere.springs
 class Classes(private val map: Map<String, Boolean>) {
 
     @JvmOverloads
-    fun and(className: String, condition: Boolean = true): Classes {
+    fun add(className: String, condition: Boolean = true): Classes {
         return Classes(mapOf(*map.entries.map { it.key to it.value }.toTypedArray(), className to condition))
     }
 

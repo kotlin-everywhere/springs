@@ -13,9 +13,9 @@ public class TestJspUtils {
         assertEquals(
                 "btn btn-xs btn-danger",
                 j.getClasses()
-                        .and("btn btn-xs")
-                        .and("btn-default", false)
-                        .and("btn-danger", true)
+                        .add("btn btn-xs")
+                        .add("btn-default", false)
+                        .add("btn-danger", true)
                         .toString()
         );
     }
