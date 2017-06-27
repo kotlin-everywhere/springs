@@ -12,9 +12,13 @@ class Classes(private val map: Map<String, Boolean>) {
     }
 }
 
-class TupleList<T1, T2>(private var list: List<Pair<T1, T2>>) : List<Pair<T1, T2>> by list {
-    fun plus(first: T1, second: T2): TupleList<T1, T2> {
+class TupleList<T1, T2>(private var list: List<Pair<T1, T2>>) {
+    fun add(first: T1, second: T2): TupleList<T1, T2> {
         return TupleList(list + (first to second))
+    }
+
+    fun build(): List <Pair<T1, T2>> {
+        return list
     }
 }
 
