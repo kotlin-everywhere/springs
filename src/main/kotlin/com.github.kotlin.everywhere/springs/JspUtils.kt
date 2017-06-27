@@ -12,6 +12,15 @@ class Classes(private val map: Map<String, Boolean>) {
     }
 }
 
+class TupleList<T1, T2>(private var list: List<Pair<T1, T2>>) : List<Pair<T1, T2>> by list {
+    fun plus(first: T1, second: T2): TupleList<T1, T2> {
+        return TupleList(list + (first to second))
+    }
+}
+
 object JspUtils {
     val classes = Classes(mapOf())
+    fun <T1, T2> tuple(first: T1, second: T2): TupleList<T1, T2> {
+        return TupleList(listOf(first to second))
+    }
 }
